@@ -36,9 +36,8 @@ body {
 
 p {
 	color: #fff;
-	font-size: 6vw;
+	font-size: 6.5vw;
 	font-family: Arial, Helvetica, sans-serif;
-	font-weight: bold;
 	line-height: 1.2;
 	margin: 0;
 	letter-spacing: 0.01em;
@@ -48,7 +47,7 @@ p {
 	position: relative;
 	display: inline-block;
 	width: auto;
-	height: 2.5vw;
+	height: 3vw;
 	clip-path: inset(0px 0px 0px 0px);
 	overflow: hidden;
 }
@@ -67,7 +66,7 @@ p {
 	z-index: 1;
 	color: transparent;
 	font-weight: bold;
-	font-size: 6vw;
+	font-size: 6.5vw;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
