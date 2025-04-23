@@ -29,9 +29,9 @@ body {
 	width: 100vw;
 	height: 100vh;
 	display: flex;
-	align-items: center;
+	align-items: start;
 	justify-content: center;
-	background-color: rebeccapurple;
+	background-color: black;
 }
 
 p {
@@ -49,15 +49,15 @@ p {
 	display: inline-block;
 	width: auto;
 	height: auto;
-	clip-path: circle(
-		10vw at 50% 50%
-	); /* Ограничиваем видимость только в этой области */
-	overflow: hidden; /* Вырезаем лишнее */
+	clip-path: inset(0px 0px 0px 0px);
+	overflow: hidden;
+	top: 20px;
 }
 
 .cutout video {
 	position: absolute;
-	inset: 0;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
@@ -72,11 +72,11 @@ p {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	background-color: black; /* fallback */
-	mix-blend-mode: screen;
+	background-color: black;
+	mix-blend-mode: screen; 
 }
 
-.cutout.small {
+/* .cutout.small {
 	clip-path: circle(3vw at 50% 50%);
 }
 
@@ -86,4 +86,4 @@ p {
 
 .cutout.large {
 	clip-path: circle(18vw at 50% 50%);
-}
+} */
