@@ -48,10 +48,10 @@ p {
 	position: relative;
 	display: inline-block;
 	width: auto;
-	height: auto;
+	height: 40px;
 	clip-path: inset(0px 0px 0px 0px);
 	overflow: hidden;
-	top: 20px;
+	/* top: 0.8vw; */
 }
 
 .cutout video {
