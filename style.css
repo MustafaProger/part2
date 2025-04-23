@@ -5,25 +5,19 @@ body {
 	padding: 0;
 }
 
-body {
-	background: #000; /* Устанавливаем черный фон для всего body */
-	height: 100vh;
-	width: 100vw;
-	/* overflow: hidden; */
-}
-
 .container {
 	position: relative;
 	width: 100vw;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .video-bg {
 	position: absolute;
 	left: 0;
 	top: 0;
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	object-fit: cover;
 	z-index: 1;
 	pointer-events: none;
@@ -37,10 +31,11 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	background-color: rebeccapurple;
 }
 
 p {
-	color: #fff; /* Белый цвет текста */
+	color: #fff;
 	font-size: 3vw;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
@@ -50,31 +45,45 @@ p {
 }
 
 .cutout {
-	display: inline-block;
-	vertical-align: middle;
-	width: 8vw;
-	height: 2vw;
 	position: relative;
+	display: inline-block;
+	width: auto;
+	height: auto;
+	clip-path: circle(
+		10vw at 50% 50%
+	); /* Ограничиваем видимость только в этой области */
+	overflow: hidden; /* Вырезаем лишнее */
 }
 
-.cutout::before {
-	content: "";
+.cutout video {
 	position: absolute;
 	inset: 0;
-	background: #000; /* Черный цвет "выреза" */
-	z-index: 2;
-	mix-blend-mode: screen; /* Инвертирует цвет на пересечении */
-	pointer-events: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.cutout .text {
+	position: relative;
+	z-index: 1;
+	color: transparent;
+	font-weight: bold;
+	font-size: 3vw;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	background-color: black; /* fallback */
+	mix-blend-mode: screen;
 }
 
 .cutout.small {
-	width: 3vw;
+	clip-path: circle(3vw at 50% 50%);
 }
 
 .cutout.medium {
-	width: 7vw;
+	clip-path: circle(7vw at 50% 50%);
 }
 
 .cutout.large {
-	width: 18vw;
+	clip-path: circle(18vw at 50% 50%);
 }
