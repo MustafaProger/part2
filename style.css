@@ -36,7 +36,7 @@ body {
 
 p {
 	color: #fff;
-	font-size: 3vw;
+	font-size: 6vw;
 	font-family: Arial, Helvetica, sans-serif;
 	font-weight: bold;
 	line-height: 1.2;
@@ -48,17 +48,16 @@ p {
 	position: relative;
 	display: inline-block;
 	width: auto;
-	height: 40px;
+	height: 2.5vw;
 	clip-path: inset(0px 0px 0px 0px);
 	overflow: hidden;
-	/* top: 0.8vw; */
 }
 
 .cutout video {
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw;
 	height: 100%;
 	object-fit: cover;
 }
@@ -68,22 +67,10 @@ p {
 	z-index: 1;
 	color: transparent;
 	font-weight: bold;
-	font-size: 3vw;
+	font-size: 6vw;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
 	background-color: black;
-	mix-blend-mode: screen; 
+	mix-blend-mode: screen;
 }
-
-/* .cutout.small {
-	clip-path: circle(3vw at 50% 50%);
-}
-
-.cutout.medium {
-	clip-path: circle(7vw at 50% 50%);
-}
-
-.cutout.large {
-	clip-path: circle(18vw at 50% 50%);
-} */
