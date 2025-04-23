@@ -1,0 +1,80 @@
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #000; /* Устанавливаем черный фон для всего body */
+	height: 100vh;
+	width: 100vw;
+	/* overflow: hidden; */
+}
+
+.container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+}
+
+.video-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.content {
+	position: relative;
+	z-index: 2;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+p {
+	color: #fff; /* Белый цвет текста */
+	font-size: 3vw;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	line-height: 1.2;
+	margin: 0;
+	letter-spacing: 0.01em;
+}
+
+.cutout {
+	display: inline-block;
+	vertical-align: middle;
+	width: 8vw;
+	height: 2vw;
+	position: relative;
+}
+
+.cutout::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: #000; /* Черный цвет "выреза" */
+	z-index: 2;
+	mix-blend-mode: screen; /* Инвертирует цвет на пересечении */
+	pointer-events: none;
+}
+
+.cutout.small {
+	width: 3vw;
+}
+
+.cutout.medium {
+	width: 7vw;
+}
+
+.cutout.large {
+	width: 18vw;
+}
